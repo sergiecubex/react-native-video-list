@@ -8,9 +8,9 @@ import AppStore from './src/store/AppStore';
 import MainScreen from './src/screens/Main';
 import DetailsScreen from './src/screens/Details';
 
-const App = () => {
-  const addToFavouritesHandler = id => {
-    console.log(id);
+const App = ({route}) => {
+  const addToFavouritesHandler = () => {
+    // route.getParam(movieId) ? console.log('true') : console.log('false');
   };
   const Stack = createStackNavigator();
   return (
@@ -25,9 +25,7 @@ const App = () => {
               headerTitle: props => <Text {...props} />,
               headerRight: () => (
                 <Button
-                  onPress={() => {
-                    addToFavouritesHandler(navigation.navigate('Favourites'));
-                  }}
+                  onPress={addToFavouritesHandler}
                   title="To Favourites"
                   color="red"
                 />

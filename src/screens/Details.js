@@ -9,10 +9,6 @@ import {useAppStore} from '../store';
 const DetailsScreen = props => {
   const [movie, setMovie] = useState();
   const [loading, setLoading] = useState(true);
-  const [state, dispatch] = useAppStore();
-  const addToFavourite = () => {
-    dispatch({type: 'SET_FAVOURITE', payload: null});
-  };
 
   const fetchMovies = async () => {
     const movId = props.route.params.movieId;
